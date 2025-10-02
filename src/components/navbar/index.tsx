@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <nav className="w-screen shadow-2xl bg-white px-3 sm:px-6 py-3 relative">
       <h3 className="text-lg sm:text-xl font-semibold text-[#8c916c] text-right">
-        Sapien's Wildlife Conservation Fund
+        Sapien&apos;s Wildlife Conservation Fund
       </h3>
 
       <Image
