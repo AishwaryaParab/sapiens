@@ -105,10 +105,10 @@ const Main = () => {
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       <div className="relative z-20 h-full w-full flex flex-col items-center justify-center px-4">
-        <h1 className="text-white text-4xl md:text-5xl font-bold text-center mb-4 leading-tight">
+        <h1 className="text-white text-3xl md:text-5xl font-bold text-center mb-4 leading-tight">
           Biodiversity Conservation & Research Consultancy
         </h1>
-        <p className="text-center text-xl max-w-lg">
+        <p className="text-center text-lg md:text-xl max-w-lg">
           Protecting nature, advancing research and shaping a sustainable
           future.{" "}
         </p>
