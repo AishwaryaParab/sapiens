@@ -1,4 +1,6 @@
 "use client";
+import { useBelowBreakpoint } from "@/hooks/use-below-breakpoint";
+import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 import Typewriter from "typewriter-effect";
 
@@ -6,6 +8,7 @@ const Main = () => {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [nextIdx, setNextIdx] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const isMobile = useBelowBreakpoint(480);
 
   const currentVideoRef = useRef<HTMLVideoElement>(null);
   const nextVideoRef = useRef<HTMLVideoElement>(null);
@@ -61,7 +64,14 @@ const Main = () => {
   }, [nextIdx]);
 
   return (
-    <div className="relative h-[calc(100vh-52px-44px)] md:h-[calc(100vh-52px-84px)] w-screen overflow-hidden bg-black">
+    <div
+      className={cn(
+        "relative w-screen overflow-hidden bg-black",
+        isMobile
+          ? "h-[calc(100vh-80px-64px)]"
+          : "h-[calc(100vh-52px-44px)] md:h-[calc(100vh-52px-84px)]"
+      )}
+    >
       {/* Current Video */}
       <video
         ref={currentVideoRef}
@@ -95,14 +105,14 @@ const Main = () => {
       <div className="absolute inset-0 bg-black/50 z-10" />
 
       <div className="relative z-20 h-full w-full flex flex-col items-center justify-center px-4">
-        <h1 className="text-white text-5xl font-bold text-center mb-4 leading-tight">
+        <h1 className="text-white text-4xl md:text-5xl font-bold text-center mb-4 leading-tight">
           Biodiversity Conservation & Research Consultancy
         </h1>
-        <p className="text-center">
+        <p className="text-center text-xl max-w-lg">
           Protecting nature, advancing research and shaping a sustainable
           future.{" "}
         </p>
-        <div className="text-3xl text-center font-bold text-white mt-5">
+        <div className="text-2xl md:text-3xl text-center font-bold text-white mt-5">
           <Typewriter
             options={{
               strings: ["Launching Soon", "Stay tuned for more updates"],

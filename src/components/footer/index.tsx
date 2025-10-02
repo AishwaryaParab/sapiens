@@ -1,6 +1,17 @@
+"use client";
+
+import { useBelowBreakpoint } from "@/hooks/use-below-breakpoint";
+import { cn } from "@/lib/utils";
+
 const Footer = () => {
+  const isMobile = useBelowBreakpoint(480);
   return (
-    <footer className="fixed bottom-0 px-3 sm:px-6 py-3 bg-white w-screen flex items-center justify-between">
+    <footer
+      className={cn(
+        "fixed bottom-0 px-3 sm:px-6 py-3 bg-white w-screen flex items-center justify-between",
+        isMobile ? "flex-col" : "flex-row"
+      )}
+    >
       <p className="text-[#8c916c] font-semibold text-sm">
         © 2025 Sapien&apos;s. All rights reserved.
       </p>
